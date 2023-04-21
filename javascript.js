@@ -22,13 +22,20 @@ function checkWin(){
     if(colMove == "x" || rowMove == "x"){
         winStatus = true;
     }else{
-        board[Number(colMove)][Number(rowMove)] = turn
-
-        if(turn == 1){
-            turn = 2
+        if(board[Number(colMove)][Number(rowMove)] == 0){
+            board[Number(colMove)][Number(rowMove)] = turn
+            if(turn == 1){
+                turn = 2
+            }else{
+                turn = 1;
+            }
         }else{
-            turn = 1;
+            console.log("This spot is already taken please choose again");
+            colMove = prompt("Choose a new column");
+            rowMove = prompt("Choose a new row");
+            checkWin();
         }
+
     }
 
     return winStatus;
