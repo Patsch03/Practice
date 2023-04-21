@@ -6,3 +6,9 @@
 //         console.log(data.value);
 // } 
 // fetchJoke();
+
+
+
+let board = [[0,0,0],
+             [0,0,0],
+             [0,0,0]];
