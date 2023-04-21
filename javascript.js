@@ -18,6 +18,13 @@ let board = [[0,0,0],
              [0,0,0],
              [0,0,0]];
 
+
+
+function checkBoard(){
+
+
+}
+
 function checkWin(){
     if(colMove == "x" || rowMove == "x"){
         winStatus = true;
