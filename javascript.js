@@ -12,18 +12,23 @@ const prompt = require('prompt-sync')();
 winStatus = false;
 colMove = "";
 rowMove = "";
+turn = 1
 
 let board = [[0,0,0],
              [0,0,0],
              [0,0,0]];
 
-
-
-
-
 function checkWin(){
     if(colMove == "x" || rowMove == "x"){
         winStatus = true;
+    }else{
+        board[Number(colMove)][Number(rowMove)] = turn
+
+        if(turn == 1){
+            turn = 2
+        }else{
+            turn = 1;
+        }
     }
 
     return winStatus;
@@ -37,6 +42,7 @@ function play(){
         console.log(colMove);
         console.log(rowMove);
         checkWin();
+        console.log(board)
     }
 }
 
