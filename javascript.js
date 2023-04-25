@@ -9,6 +9,8 @@ const prompt = require('prompt-sync')();
 //         console.log(data.value);
 // } 
 // fetchJoke();
+
+
 winStatus = false;
 colMove = "";
 rowMove = "";
@@ -51,10 +53,16 @@ function checkWin(){
 
 function play(){
     while(!winStatus){
-        colMove = prompt("Choose a column");
-        rowMove = prompt("Choose a row");
-        console.log(colMove);
-        console.log(rowMove);
+        colMove = prompt("Choose a column ( Or enter x to exit program )");
+        if(colMove == "x"){
+            break;
+        }
+        rowMove = prompt("Choose a row ( Or enter x to exit program )");
+        if(rowMove == "x"){
+            break;
+        }
+        // console.log(colMove);
+        // console.log(rowMove);
         checkWin();
         console.log(board)
     }
