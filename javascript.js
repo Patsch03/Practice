@@ -2,7 +2,6 @@
 
 const prompt = require('prompt-sync')();
 
-
 // async function fetchJoke() { 
 //     const results = await fetch(`https://api.chucknorris.io/jokes/random`);
 //     const data = await results.json();
@@ -16,6 +15,13 @@ colMove = "";
 rowMove = "";
 turn = 1
 
+const winCons = {
+    xsWin: [1,1,1],
+    osWin: [2,2,2],
+}
+
+console.log(winCons.xsWin);
+
 let board = [[0,0,0],
              [0,0,0],
              [0,0,0]];
@@ -23,7 +29,23 @@ let board = [[0,0,0],
 
 
 function checkBoard(){
+    if(board[0] == winCons.xsWin){
+        console.log("xsWin");
+    }else if(board[0] == winCons.osWin){
+        console.log("osWin");
+    }
 
+    if(board[1] == winCons.xsWin){
+        console.log("xsWin");
+    }else if(board[1] == winCons.osWin){
+        console.log("osWin");
+    }
+
+    if(board[2] == winCons.xsWin){
+        console.log("xsWin");
+    }else if(board[2] == winCons.osWin){
+        console.log("osWin");
+    }
 
 }
 
@@ -61,9 +83,20 @@ function play(){
         if(rowMove == "x"){
             break;
         }
+
         // console.log(colMove);
         // console.log(rowMove);
         checkWin();
+
+        console.log(board[0]);
+        console.log(winCons.xsWin);
+
+        if(board[0] == winCons.xsWin){
+            console.log("xsWin");
+        }else if(board[0] == winCons.osWin){
+            console.log("osWin");
+        }
+        // checkBoard();
         console.log(board)
     }
 }
