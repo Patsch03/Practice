@@ -29,23 +29,7 @@ let board = [[0,0,0],
 
 
 function checkBoard(){
-    // if(board[0] == winCons.xsWin){
-    //     console.log("xsWin");
-    // }else if(board[0] == winCons.osWin){
-    //     console.log("osWin");
-    // }
 
-    // if(board[1] == winCons.xsWin){
-    //     console.log("xsWin");
-    // }else if(board[1] == winCons.osWin){
-    //     console.log("osWin");
-    // }
-
-    // if(board[2] == winCons.xsWin){
-    //     console.log("xsWin");
-    // }else if(board[2] == winCons.osWin){
-    //     console.log("osWin");
-    // }
 
 }
 
@@ -87,7 +71,7 @@ function play(){
         // console.log(colMove);
         // console.log(rowMove);
         checkWin();
-        
+
         // checkBoard();
         console.log(board)
     }
