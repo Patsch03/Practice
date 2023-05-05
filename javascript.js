@@ -29,14 +29,11 @@ let board = [[0,0,0],
 
 
 function checkBoard(){
-    if((colMove - 1) != -1){
-        if(board[Number(rowMove) - 1][Number(colMove)] == board[Number(rowMove)][Number(colMove)]){
-            if(board[Number(rowMove) + 1][Number(colMove)] ){
-                if(board[Number(rowMove+1)][Number(colMove)] == board[Number(rowMove)][Number(colMove)]){
-                    console.log("vertical win");
-                }
-            }
-        }
+
+    if(board[colMove - 1][rowMove]){ // need to check if it exists dont know how
+        console.log("column to left exists");
+    }else{
+        console.log("column to left doesnt exist");
     }
 
 }
