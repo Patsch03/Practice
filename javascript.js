@@ -29,7 +29,15 @@ let board = [[0,0,0],
 
 
 function checkBoard(){
-
+    if((colMove - 1) != -1){
+        if(board[Number(rowMove) - 1][Number(colMove)] == board[Number(rowMove)][Number(colMove)]){
+            if(board[Number(rowMove) + 1][Number(colMove)] ){
+                if(board[Number(rowMove+1)][Number(colMove)] == board[Number(rowMove)][Number(colMove)]){
+                    console.log("vertical win");
+                }
+            }
+        }
+    }
 
 }
 
@@ -37,8 +45,8 @@ function checkWin(){
     if(colMove == "x" || rowMove == "x"){
         winStatus = true;
     }else{
-        if(board[Number(colMove)][Number(rowMove)] == 0){
-            board[Number(colMove)][Number(rowMove)] = turn
+        if(board[Number(rowMove)][Number(colMove)] == 0){
+            board[Number(rowMove)][Number(colMove)] = turn
             if(turn == 1){
                 turn = 2
             }else{
@@ -72,7 +80,7 @@ function play(){
         // console.log(rowMove);
         checkWin();
 
-        // checkBoard();
+        checkBoard();
         console.log(board)
     }
 }
