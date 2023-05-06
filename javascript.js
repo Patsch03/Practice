@@ -30,10 +30,25 @@ let board = [[0,0,0],
 
 function checkBoard(){
 
-    if(board[colMove - 1][rowMove]){ // need to check if it exists dont know how
-        console.log("column to left exists");
-    }else{
-        console.log("column to left doesnt exist");
+
+    if(colMove == "0"){
+        console.log("first statement");
+        if(rowMove == "0"){
+            console.log("second statement");
+            if(board[0][1] == board[0][0] && board[0][1] != 0){
+                if(board[0][2] == board[0][0]){
+                    console.log("win");
+                }
+            }
+        }else if(rowMove == 1){
+
+        }else if(rowMove == 2){
+
+        }
+    }else if(colMove == 1){
+
+    }else if(colMove == 2){
+
     }
 
 }
@@ -76,7 +91,6 @@ function play(){
         // console.log(colMove);
         // console.log(rowMove);
         checkWin();
-
         checkBoard();
         console.log(board)
     }
