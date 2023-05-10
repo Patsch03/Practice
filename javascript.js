@@ -32,17 +32,19 @@ function checkBoard(){
 
 
     if(colMove == "0"){
-        console.log("first statement");
         if(rowMove == "0"){
-            console.log("second statement");
             if(board[0][1] == board[0][0] && board[0][1] != 0){
                 if(board[0][2] == board[0][0]){
                     console.log("win");
                 }
             }
-        }else if(rowMove == 1){
-
-        }else if(rowMove == 2){
+        }else if(rowMove == "1"){
+            if(board[1][1] == board[1][0] && board[1][1] != 0){
+                if(board[1][2] == board[1][0]){
+                    console.log("win by middle row");
+                }
+            }
+        }else if(rowMove == "2"){
 
         }
     }else if(colMove == 1){
