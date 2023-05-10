@@ -37,7 +37,7 @@ function checkBoard(){
                 if(board[0][2] == board[0][0]){
                     console.log("win");
                 }
-            }
+            } // gotta add diagonal check
         }else if(rowMove == "1"){
             if(board[1][1] == board[1][0] && board[1][1] != 0){
                 if(board[1][2] == board[1][0]){
@@ -45,8 +45,12 @@ function checkBoard(){
                 }
             }
         }else if(rowMove == "2"){
-
-        }
+            if(board[2][1] == board[2][0] && board[2][0] != 0){
+                if(board[2][2] == board[2][1]){
+                    console.log("win by 3rd row ")
+                }
+            }
+        } // gotta add diagonal check
     }else if(colMove == 1){
 
     }else if(colMove == 2){
