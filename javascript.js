@@ -36,6 +36,7 @@ function checkBoard(){
 
 
     HAVE TO ADD GAME ENDING INSTEAD OF CONSOLE LOGGING WIN**
+    KNOCKDOWN REPETITIVENESS
 
 
 
@@ -67,7 +68,7 @@ function checkBoard(){
             }
             if(board[1][1] == board[2][0] && board[2][0] != 0){
                 if(board[0][2] == board[2][0]){
-                    console.log("diagonal win bot (left to top right)");
+                    console.log("diagonal win bot (bot left to top right)");
                 }
             }
         } 
@@ -77,11 +78,69 @@ function checkBoard(){
         }
 
     }else if(colMove == 1){
-        if(rowMove = "0"){
+        if(rowMove == "0"){
+            if(board[0][0] == board[0][1] && board[0][1] != 0){
+                if(board[0][2] == board[0][1]){
+                    console.log("row 1 win ");
+                }
+            }
+        }else if(rowMove == "1"){
+            if(board[0][0] == board[1][1] && board[0][0] != 0){
+                if(board[1][1] == board[2][2]){
+                    console.log("diagonal win (topleft to botright)")
+                }
+            }
+            if(board[1][1] == board[2][0] && board[2][0] != 0){
+                if(board[0][2] == board[2][0]){
+                    console.log("diagonal win bot (bot left to top right)");
+                }
+            }
+            if(board[1][0] == board[1][1] && board[1][0] != 0){
+                if(board[1][2] == board[1][1]){
+                    console.log("row 2 win");
+                }
+            }
+        }
 
+        if(board[0][1] == board[1][1] && board[1][1] == board[2][1]){
+            console.log("column 2 win");
         }
     }else if(colMove == 2){
+        if(rowMove == "0"){
+            if(board[0][1] == board[0][0] && board[0][1] != 0){
+                if(board[0][2] == board[0][0]){
+                    console.log("win by first row");
+                }
+            } 
+            if(board[1][1] == board[2][0] && board[2][0] != 0){
+                if(board[0][2] == board[2][0]){
+                    console.log("diagonal win bot (bot left to top right)");
+                }
+            }
 
+        }else if(rowMove == "1"){
+            if(board[1][1] == board[1][0] && board[1][1] != 0){s
+                if(board[1][2] == board[1][0]){
+                    console.log("win by middle row");
+                }
+            }
+        }else if(rowMove == "2"){
+            if(board[2][1] == board[2][0] && board[2][0] != 0){
+                if(board[2][2] == board[2][1]){
+                    console.log("win by 3rd row ")
+                }
+            }
+
+            if(board[0][0] == board[1][1] && board[0][0] != 0){
+                if(board[1][1] == board[2][2]){
+                    console.log("diagonal win (topleft to botright)")
+                }
+            }
+
+        } 
+        if(board[0][2] == board[1][2] && board[1][2] == board[2][2]){
+            console.log("column 3 win");
+        }
     }
 
 }
