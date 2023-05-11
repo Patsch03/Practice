@@ -39,15 +39,20 @@ function checkBoard(){
 
 
 
-
     */
     if(colMove == "0"){
         if(rowMove == "0"){
             if(board[0][1] == board[0][0] && board[0][1] != 0){
                 if(board[0][2] == board[0][0]){
-                    console.log("win");
+                    console.log("win by first row");
                 }
-            } // gotta add diagonal check
+            } 
+
+            if(board[0][0] == board[1][1] && board[0][0] != 0){
+                if(board[1][1] == board[2][2]){
+                    console.log("diagonal win (topleft to botright)")
+                }
+            }
         }else if(rowMove == "1"){
             if(board[1][1] == board[1][0] && board[1][1] != 0){
                 if(board[1][2] == board[1][0]){
@@ -62,12 +67,19 @@ function checkBoard(){
             }
             if(board[1][1] == board[2][0] && board[2][0] != 0){
                 if(board[0][2] == board[2][0]){
-                    console.log("diagonal win");
+                    console.log("diagonal win bot (left to top right)");
                 }
             }
         } 
-    }else if(colMove == 1){
 
+        if(board[0][0] == board[1][0] && board[1][0] == board[2][0]){
+            console.log("Column 1 win");
+        }
+
+    }else if(colMove == 1){
+        if(rowMove = "0"){
+
+        }
     }else if(colMove == 2){
 
     }
