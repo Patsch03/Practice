@@ -31,6 +31,16 @@ let board = [[0,0,0],
 function checkBoard(){
 
 
+
+    /*
+
+
+    HAVE TO ADD GAME ENDING INSTEAD OF CONSOLE LOGGING WIN**
+
+
+
+
+    */
     if(colMove == "0"){
         if(rowMove == "0"){
             if(board[0][1] == board[0][0] && board[0][1] != 0){
@@ -50,7 +60,12 @@ function checkBoard(){
                     console.log("win by 3rd row ")
                 }
             }
-        } // gotta add diagonal check
+            if(board[1][1] == board[2][0] && board[2][0] != 0){
+                if(board[0][2] == board[2][0]){
+                    console.log("diagonal win");
+                }
+            }
+        } 
     }else if(colMove == 1){
 
     }else if(colMove == 2){
