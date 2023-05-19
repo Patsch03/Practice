@@ -14,6 +14,14 @@ winStatus = false;
 colMove = "";
 rowMove = "";
 turn = 1
+turns = "X"
+
+/*
+
+X's = 1
+O's = 2
+
+*/
 
 const winCons = [
    [1,1,1],
@@ -47,101 +55,101 @@ function checkBoard(){
         if(rowMove == "0"){
             if(board[0][1] == board[0][0] && board[0][1] != 0){
                 if(board[0][2] == board[0][0]){
-                    console.log("win by first row");
+                    console.log(turns + "'s win");
                 }
             } 
 
             if(board[0][0] == board[1][1] && board[0][0] != 0){
                 if(board[1][1] == board[2][2]){
-                    console.log("diagonal win (topleft to botright)")
+                    console.log(turns + "'s win")
                 }
             }
         }else if(rowMove == "1"){
             if(board[1][1] == board[1][0] && board[1][1] != 0){
                 if(board[1][2] == board[1][0]){
-                    console.log("win by middle row");
+                    console.log(turns + "'s win");
                 }
             }
         }else if(rowMove == "2"){
             if(board[2][1] == board[2][0] && board[2][0] != 0){
                 if(board[2][2] == board[2][1]){
-                    console.log("win by 3rd row ")
+                    console.log(turns + "'s win")
                 }
             }
             if(board[1][1] == board[2][0] && board[2][0] != 0){
                 if(board[0][2] == board[2][0]){
-                    console.log("diagonal win bot (bot left to top right)");
+                    console.log(turns + "'s win");
                 }
             }
         } 
 
         if(board[0][0] == board[1][0] && board[1][0] == board[2][0]){
-            console.log("Column 1 win");
+            console.log(turns + "'s win");
         }
 
     }else if(colMove == 1){
         if(rowMove == "0"){
             if(board[0][0] == board[0][1] && board[0][1] != 0){
                 if(board[0][2] == board[0][1]){
-                    console.log("row 1 win ");
+                    console.log(turns + "'s win");
                 }
             }
         }else if(rowMove == "1"){
             if(board[0][0] == board[1][1] && board[0][0] != 0){
                 if(board[1][1] == board[2][2]){
-                    console.log("diagonal win (topleft to botright)")
+                    console.log(turns + "'s win")
                 }
             }
             if(board[1][1] == board[2][0] && board[2][0] != 0){
                 if(board[0][2] == board[2][0]){
-                    console.log("diagonal win bot (bot left to top right)");
+                    console.log(turns+ "'s win");
                 }
             }
             if(board[1][0] == board[1][1] && board[1][0] != 0){
                 if(board[1][2] == board[1][1]){
-                    console.log("row 2 win");
+                    console.log(turns + "'s win");
                 }
             }
         }
 
         if(board[0][1] == board[1][1] && board[1][1] == board[2][1]){
-            console.log("column 2 win");
+            console.log(turns + "'s win");
         }
     }else if(colMove == 2){
         if(rowMove == "0"){
             if(board[0][1] == board[0][0] && board[0][1] != 0){
                 if(board[0][2] == board[0][0]){
-                    console.log("win by first row");
+                    console.log(turns + "'s win");
                 }
             } 
             if(board[1][1] == board[2][0] && board[2][0] != 0){
                 if(board[0][2] == board[2][0]){
-                    console.log("diagonal win bot (bot left to top right)");
+                    console.log(turns + "'s win");
                 }
             }
 
         }else if(rowMove == "1"){
             if(board[1][1] == board[1][0] && board[1][1] != 0){s
                 if(board[1][2] == board[1][0]){
-                    console.log("win by middle row");
+                    console.log(turns + "'s win");
                 }
             }
         }else if(rowMove == "2"){
             if(board[2][1] == board[2][0] && board[2][0] != 0){
                 if(board[2][2] == board[2][1]){
-                    console.log("win by 3rd row ")
+                    console.log(turns + "'s win")
                 }
             }
 
             if(board[0][0] == board[1][1] && board[0][0] != 0){
                 if(board[1][1] == board[2][2]){
-                    console.log("diagonal win (topleft to botright)")
+                    console.log(turns + "'s win")
                 }
             }
 
         } 
         if(board[0][2] == board[1][2] && board[1][2] == board[2][2]){
-            console.log("column 3 win");
+            console.log(turns + "'s win");
         }
     }
 
@@ -155,8 +163,10 @@ function checkWin(){
             board[Number(rowMove)][Number(colMove)] = turn
             if(turn == 1){
                 turn = 2
+                turns = "X"
             }else{
                 turn = 1;
+                turns = "O"
             }
         }else{
             console.log("This spot is already taken please choose again");
