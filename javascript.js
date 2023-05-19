@@ -40,8 +40,8 @@ function checkBoard(){
 
     /*
     KNOCKDOWN REPETITIVENESS
-    ADD ENDGAME 
     ADD TIE MECHANIC INTO GAME 
+    CHANGE PRINT FROM NUMBERS TO SYMBOLS X AND O
     */
     if(colMove == "0"){
         if(rowMove == "0"){
@@ -134,7 +134,7 @@ function checkBoard(){
             }
 
         }else if(rowMove == "1"){
-            if(board[1][1] == board[1][0] && board[1][1] != 0){s
+            if(board[1][1] == board[1][0] && board[1][1] != 0){
                 if(board[1][2] == board[1][0]){
                     console.log(turns + "'s win");
                     winStatus = true;
@@ -160,6 +160,13 @@ function checkBoard(){
             console.log(turns + "'s win");
             winStatus = true;
         }
+    }
+    
+    
+    
+    if(board[0][0] != 0 && board[0][1] != 0 && board[0][2] != 0 && board[1][0] != 0 && board[1][1] != 0 && board[1][2] != 0 && board[2][0] != 0 && board[2][1] != 0 && board[2][2] != 0){
+        console.log("tie game");
+        winStatus = true;
     }
 
 }
@@ -203,7 +210,9 @@ function play(){
 
         checkWin();
         checkBoard();
-        console.log(board)
+        console.log(board[0]);
+        console.log(board[1]);
+        console.log(board[2]);
     }
 }
 
