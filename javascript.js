@@ -38,53 +38,51 @@ let board = [[0,0,0],
 
 function checkBoard(){
 
-
-
     /*
-
-
-    HAVE TO ADD GAME ENDING INSTEAD OF CONSOLE LOGGING WIN**
     KNOCKDOWN REPETITIVENESS
     ADD ENDGAME 
     ADD TIE MECHANIC INTO GAME 
-
-
-
     */
     if(colMove == "0"){
         if(rowMove == "0"){
             if(board[0][1] == board[0][0] && board[0][1] != 0){
                 if(board[0][2] == board[0][0]){
                     console.log(turns + "'s win");
+                    winStatus = true;
                 }
             } 
 
             if(board[0][0] == board[1][1] && board[0][0] != 0){
                 if(board[1][1] == board[2][2]){
-                    console.log(turns + "'s win")
+                    console.log(turns + "'s win");
+                    winStatus = true;
                 }
             }
         }else if(rowMove == "1"){
             if(board[1][1] == board[1][0] && board[1][1] != 0){
                 if(board[1][2] == board[1][0]){
                     console.log(turns + "'s win");
+                    winStatus = true;
                 }
             }
         }else if(rowMove == "2"){
             if(board[2][1] == board[2][0] && board[2][0] != 0){
                 if(board[2][2] == board[2][1]){
-                    console.log(turns + "'s win")
+                    console.log(turns + "'s win");
+                    winStatus = true;
                 }
             }
             if(board[1][1] == board[2][0] && board[2][0] != 0){
                 if(board[0][2] == board[2][0]){
                     console.log(turns + "'s win");
+                    winStatus = true;
                 }
             }
         } 
 
         if(board[0][0] == board[1][0] && board[1][0] == board[2][0]){
             console.log(turns + "'s win");
+            winStatus = true;
         }
 
     }else if(colMove == 1){
@@ -92,39 +90,46 @@ function checkBoard(){
             if(board[0][0] == board[0][1] && board[0][1] != 0){
                 if(board[0][2] == board[0][1]){
                     console.log(turns + "'s win");
+                    winStatus = true;
                 }
             }
         }else if(rowMove == "1"){
             if(board[0][0] == board[1][1] && board[0][0] != 0){
                 if(board[1][1] == board[2][2]){
                     console.log(turns + "'s win")
+                    winStatus = true;
                 }
             }
             if(board[1][1] == board[2][0] && board[2][0] != 0){
                 if(board[0][2] == board[2][0]){
                     console.log(turns+ "'s win");
+                    winStatus = true;
                 }
             }
             if(board[1][0] == board[1][1] && board[1][0] != 0){
                 if(board[1][2] == board[1][1]){
                     console.log(turns + "'s win");
+                    winStatus = true;
                 }
             }
         }
 
         if(board[0][1] == board[1][1] && board[1][1] == board[2][1]){
             console.log(turns + "'s win");
+            winStatus = true;
         }
     }else if(colMove == 2){
         if(rowMove == "0"){
             if(board[0][1] == board[0][0] && board[0][1] != 0){
                 if(board[0][2] == board[0][0]){
                     console.log(turns + "'s win");
+                    winStatus = true;
                 }
             } 
             if(board[1][1] == board[2][0] && board[2][0] != 0){
                 if(board[0][2] == board[2][0]){
                     console.log(turns + "'s win");
+                    winStatus = true;
                 }
             }
 
@@ -132,24 +137,28 @@ function checkBoard(){
             if(board[1][1] == board[1][0] && board[1][1] != 0){s
                 if(board[1][2] == board[1][0]){
                     console.log(turns + "'s win");
+                    winStatus = true;
                 }
             }
         }else if(rowMove == "2"){
             if(board[2][1] == board[2][0] && board[2][0] != 0){
                 if(board[2][2] == board[2][1]){
                     console.log(turns + "'s win")
+                    winStatus = true;
                 }
             }
 
             if(board[0][0] == board[1][1] && board[0][0] != 0){
                 if(board[1][1] == board[2][2]){
                     console.log(turns + "'s win")
+                    winStatus = true;
                 }
             }
 
         } 
         if(board[0][2] == board[1][2] && board[1][2] == board[2][2]){
             console.log(turns + "'s win");
+            winStatus = true;
         }
     }
 
@@ -192,8 +201,6 @@ function play(){
             break;
         }
 
-        // console.log(colMove);
-        // console.log(rowMove);
         checkWin();
         checkBoard();
         console.log(board)
